@@ -1,0 +1,863 @@
+
+/* =====================================================
+   KALMA BRAVA
+   HOJA DE ESTILOS PRINCIPAL
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap');
+
+
+/* =====================================================
+   VARIABLES DE COLOR
+   ===================================================== */
+
+:root {
+    --black: #101010;
+    --dark: #181818;
+    --card: #222222;
+
+    --red: #cc252b;
+    --red-hover: #a91d23;
+
+    --white: #ffffff;
+    --muted: #b9b9b9;
+    --border: #353535;
+}
+
+
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+.section {
+    padding: 95px 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Oswald', Arial, sans-serif;
+    line-height: 1.15;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: #f35b60;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   ENCABEZADO
+   ===================================================== */
+
+.site-header {
+    background: rgba(15, 15, 15, 0.97);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.brand img {
+    width: 57px;
+    height: 57px;
+    background: white;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.brand small {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #f35b60;
+    margin-top: 5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #f35b60;
+}
+
+.nav-links .nav-button {
+    background: var(--red);
+    color: white;
+    border-radius: 5px;
+    padding: 12px 19px;
+}
+
+.nav-links .nav-button:hover {
+    background: var(--red-hover);
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    border: 1px solid var(--border);
+    color: white;
+    background: transparent;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   BOTONES GENERALES
+   ===================================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 27px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--red);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--red-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid #888;
+    color: white;
+}
+
+.btn-outline:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+
+/* =====================================================
+   PORTADA PRINCIPAL
+   ===================================================== */
+
+.hero {
+    padding: 75px 0 95px;
+
+    background:
+        radial-gradient(
+            circle at 78% 35%,
+            rgba(164, 27, 32, 0.19),
+            transparent 35%
+        ),
+        var(--black);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 0.88fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-text h1 {
+    font-size: clamp(58px, 7vw, 108px);
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+.hero-text h1 span {
+    color: var(--red);
+}
+
+.hero-text h2 {
+    font-size: clamp(25px, 3vw, 37px);
+    font-weight: 500;
+    margin-bottom: 20px;
+    max-width: 560px;
+}
+
+.hero-text p {
+    max-width: 540px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.hero-photo {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 570px;
+    object-fit: cover;
+}
+
+.photo-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 55px 25px 25px;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.92)
+    );
+}
+
+.photo-caption strong {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 37px;
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   TÍTULOS DE SECCIONES
+   ===================================================== */
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(35px, 4vw, 53px);
+    margin-bottom: 14px;
+}
+
+.section-heading p {
+    font-size: 15px;
+    color: var(--muted);
+}
+
+
+/* =====================================================
+   CATEGORÍAS
+   ===================================================== */
+
+.categories-section {
+    background: var(--dark);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.category-card {
+    position: relative;
+    height: 360px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--card);
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.07);
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 26px;
+
+    background: linear-gradient(
+        transparent 30%,
+        rgba(0, 0, 0, 0.9)
+    );
+}
+
+.category-overlay h3 {
+    font-size: 30px;
+}
+
+.category-overlay span {
+    color: #dddddd;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+
+/* =====================================================
+   MENÚ DE PRODUCTOS
+   ===================================================== */
+
+.menu-section {
+    background: var(--black);
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.filter-btn {
+    border: 1px solid var(--border);
+    color: #dddddd;
+    background: var(--card);
+
+    padding: 11px 22px;
+    border-radius: 30px;
+
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--red);
+    border-color: var(--red);
+    color: white;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: var(--card);
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--red);
+}
+
+.product-card.is-hidden {
+    display: none;
+}
+
+.product-image {
+    height: 265px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 25px;
+}
+
+.product-category {
+    display: inline-block;
+    color: #f35b60;
+
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+
+    margin-bottom: 13px;
+}
+
+.product-info h3 {
+    font-size: 25px;
+    margin-bottom: 13px;
+}
+
+.product-info p {
+    color: var(--muted);
+    font-size: 14px;
+    min-height: 68px;
+}
+
+.product-price-note {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #e8b4b6;
+}
+
+.menu-note {
+    margin-top: 28px;
+    text-align: center;
+    color: #999999;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   NOSOTROS
+   ===================================================== */
+
+.about-section {
+    background: var(--dark);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.about-text h2 {
+    font-size: clamp(40px, 4.5vw, 60px);
+    margin-bottom: 25px;
+}
+
+.about-text h2 span {
+    color: var(--red);
+}
+
+.about-text p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.about-text .btn {
+    margin-top: 18px;
+}
+
+
+/* =====================================================
+   HORARIOS
+   ===================================================== */
+
+.hours-section {
+    background: var(--black);
+}
+
+.hours-card {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 35px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px 5px;
+    border-bottom: 1px solid var(--border);
+}
+
+.hours-row span {
+    color: #dddddd;
+}
+
+.hours-row strong {
+    font-size: 14px;
+    text-align: right;
+}
+
+.hours-note {
+    margin-top: 24px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   CONTACTO
+   ===================================================== */
+
+.contact-section {
+    background:
+        linear-gradient(
+            rgba(13, 13, 13, 0.86),
+            rgba(13, 13, 13, 0.94)
+        ),
+        url('../img/charola-louisiana.jpg')
+        center / cover;
+}
+
+.contact-content {
+    text-align: center;
+    max-width: 760px;
+}
+
+.contact-content h2 {
+    font-size: clamp(38px, 5vw, 65px);
+    margin-bottom: 20px;
+}
+
+.contact-content h2 span {
+    color: var(--red);
+}
+
+.contact-content p {
+    color: #dddddd;
+    font-size: 15px;
+}
+
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+
+/* =====================================================
+   PIE DE PÁGINA
+   ===================================================== */
+
+.site-footer {
+    background: #090909;
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    padding: 65px 0;
+}
+
+.footer-content h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.footer-content h4 {
+    font-size: 20px;
+    margin-bottom: 17px;
+}
+
+.footer-content p,
+.footer-content a {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.footer-content a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #888888;
+    border-top: 1px solid var(--border);
+    padding: 20px;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   MENSAJES DE SMARTY
+   ===================================================== */
+
+.alert {
+    max-width: 1180px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    border-radius: 6px;
+
+    background: #6d292b;
+    color: white;
+    border: 1px solid #a84b4e;
+}
+
+
+/* =====================================================
+   TABLETS
+   ===================================================== */
+
+@media (max-width: 950px) {
+
+    .hero-content,
+    .about-grid {
+        gap: 35px;
+    }
+
+    .products-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+}
+
+
+/* =====================================================
+   CELULARES
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .navbar {
+        min-height: 75px;
+    }
+
+    .brand {
+        font-size: 21px;
+    }
+
+    .brand img {
+        height: 49px;
+        width: 49px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 75px;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 22px 5%;
+
+        background: #161616;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 10px;
+    }
+
+    .nav-links .nav-button {
+        text-align: center;
+    }
+
+    .hero {
+        padding: 55px 0 65px;
+    }
+
+    .hero-content,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(52px, 13vw, 75px);
+    }
+
+    .hero-photo img {
+        height: 390px;
+    }
+
+    .categories-grid,
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        height: 290px;
+    }
+
+    .product-image {
+        height: 310px;
+    }
+
+    .about-image img {
+        height: 380px;
+    }
+
+    .hours-card {
+        padding: 22px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-actions .btn {
+        flex: 1;
+    }
+
+}
+
+
+/* =====================================================
+   CELULARES PEQUEÑOS
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .hours-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .hours-row strong {
+        text-align: left;
+    }
+
+    .product-image {
+        height: 240px;
+    }
+
+}
+
+
+/* =====================================================
+   ACCESIBILIDAD
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+
+}
